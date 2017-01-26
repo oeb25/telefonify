@@ -8,4 +8,4 @@ const isServer = window.location.search == '?server';
 
 const App = (isServer ? server : client).init(id);
 
-render(<App />, document.getElementById('app'));
+render(<App></App>, document.getElementById('app'));

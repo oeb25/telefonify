@@ -19,7 +19,7 @@ export const question = db.ref('question');
 
 export type Awnser = {user: string, index: number};
 export type User = {id: string, name: string};
-export type Question = {id: string, question: string, options: Option[]};
+export type Question = {id: string, question: string, options: Option[], correct: number};
 export type Option = string;
 
 export const registerUser = (db: firebase.database.Database, name: string) => {
@@ -29,3 +29,7 @@ export const registerUser = (db: firebase.database.Database, name: string) => {
 
   return user;
 };
+
+export const setQuestion = (db: firebase.database.Database, q: Question) => {
+  question.set(q);
+}
